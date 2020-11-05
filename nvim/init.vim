@@ -48,7 +48,10 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 Plug 'jonathanfilip/vim-lucius'
-Plug 'scrooloose/nerdtree'
+
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+
 Plug 'vim-airline/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 nmap <C-p> <Plug>AirlineSelectPrevTab
