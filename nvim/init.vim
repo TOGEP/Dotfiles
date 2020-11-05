@@ -33,6 +33,11 @@ set hlsearch
 set wildmenu
 set history=5000
 
+" noswapfile
+set noswapfile
+set nobackup
+set noundofile
+
 " vim-plug
 call plug#begin()
 
