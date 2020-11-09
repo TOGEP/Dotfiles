@@ -59,10 +59,7 @@ Plug 'jonathanfilip/vim-lucius'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 
-Plug 'vim-airline/vim-airline'
-let g:airline#extensions#tabline#enabled = 1
-nmap <C-p> <Plug>AirlineSelectPrevTab
-nmap <C-n> <Plug>AirlineSelectNextTab
+Plug 'itchyny/lightline.vim'
 
 Plug 'w0rp/ale'
 
