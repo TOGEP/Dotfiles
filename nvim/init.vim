@@ -49,6 +49,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <CR> <Plug>(coc-definition)
+nmap <silent> <Leader>r <Plug>(coc-references)
+nmap <silent> f <Plug>(coc-fix-current)
 
 Plug 'jonathanfilip/vim-lucius'
 
