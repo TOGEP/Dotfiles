@@ -42,6 +42,9 @@ set noundofile
 let mapleader = "\<Space>"
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 
+" tabline
+set showtabline=2
+
 " vim-plug
 call plug#begin()
 
@@ -57,11 +60,14 @@ nmap <silent> f <Plug>(coc-fix-current)
 Plug 'jonathanfilip/vim-lucius'
 
 Plug 'preservim/nerdtree'
-map <C-e> :NERDTreeToggle<CR>
+Plug 'jistr/vim-nerdtree-tabs'
+map <C-e> :NERDTreeTabsToggle<CR>
 " ファイル指定せずにvimを開いた時にNERDTreeを最初から表示
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " NERDTreeToggleのウィンドウだけが残る場合はvimを終了
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" 隠しファイル表示
+let NERDTreeShowHidden = 1
 
 Plug 'ryanoasis/vim-devicons'
 
