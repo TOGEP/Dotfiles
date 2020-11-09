@@ -57,6 +57,12 @@ nmap <silent> f <Plug>(coc-fix-current)
 Plug 'jonathanfilip/vim-lucius'
 
 Plug 'preservim/nerdtree'
+map <C-e> :NERDTreeToggle<CR>
+" ファイル指定せずにvimを開いた時にNERDTreeを最初から表示
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" NERDTreeToggleのウィンドウだけが残る場合はvimを終了
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'itchyny/lightline.vim'
