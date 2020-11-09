@@ -70,6 +70,11 @@ Plug 'vim-jp/vimdoc-ja'
 
 Plug 'mattn/vim-goimports'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+let g:fzf_layout = { 'down': '50%' }
+nnoremap <silent> <Leader>g :Files<CR>
+
 call plug#end()
 
 
