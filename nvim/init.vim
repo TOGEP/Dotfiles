@@ -59,6 +59,10 @@ nmap <C-n> <Plug>AirlineSelectNextTab
 
 Plug 'w0rp/ale'
 
+Plug 'vim-jp/vimdoc-ja'
+
+Plug 'mattn/vim-goimports'
+
 call plug#end()
 
 
