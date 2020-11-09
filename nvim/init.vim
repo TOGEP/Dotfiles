@@ -38,6 +38,9 @@ set noswapfile
 set nobackup
 set noundofile
 
+" keymap
+let mapleader = "\<Space>"
+
 " vim-plug
 call plug#begin()
 
