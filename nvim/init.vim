@@ -40,6 +40,7 @@ set noundofile
 
 " keymap
 let mapleader = "\<Space>"
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 
 " vim-plug
 call plug#begin()
