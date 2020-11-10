@@ -91,6 +91,9 @@ command! -bang -nargs=* Rg
 nnoremap <silent> <Leader>g :Rg<CR>
 nnoremap <Leader>p :Files<CR>
 
+Plug 'easymotion/vim-easymotion'
+nmap <leader>s <Plug>(easymotion-overwin-f)
+
 call plug#end()
 
 
