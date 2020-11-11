@@ -92,7 +92,19 @@ nnoremap <silent> <Leader>g :Rg<CR>
 nnoremap <Leader>p :Files<CR>
 
 Plug 'easymotion/vim-easymotion'
-nmap <leader>s <Plug>(easymotion-overwin-f)
+let g:EasyMotion_do_mapping = 0
+" <Leader>f{char} to move to {char}
+map <leader>f <Plug>(easymotion-bd-f)
+nmap <leader>f <Plug>(easymotion-overwin-f)
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+vmap s <Plug>(easymotion-bd-f2)
+" Move to line
+map <Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader>l <Plug>(easymotion-overwin-line)
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 call plug#end()
 
