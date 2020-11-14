@@ -107,7 +107,17 @@ map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
 Plug 'airblade/vim-gitgutter'
-call plug#end()
+set updatetime=250
+" Move to Hunk
+nmap [h <Plug>(GitGutterPrevHunk)
+nmap ]h <Plug>(GitGutterNextHunk)
+" Highlight Toggle
+nnoremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
+" default gitgutter maps
+" nmap <Leader>hs <Plug>GitGutterStageHunk
+" nmap <Leader>hr <Plug>GitGutterRevertHunk
+" nmap <Leader>hp <Plug>GitGutterPreviewHunk
 
+call plug#end()
 
 colorscheme lucius
