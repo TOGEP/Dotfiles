@@ -92,13 +92,16 @@ nnoremap <silent> <Leader>g :Rg<CR>
 nnoremap <Leader>p :Files<CR>
 
 Plug 'easymotion/vim-easymotion'
+" Disable default mappings
 let g:EasyMotion_do_mapping = 0
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
 " <Leader>f{char} to move to {char}
-map <leader>f <Plug>(easymotion-bd-f)
-nmap <leader>f <Plug>(easymotion-overwin-f)
-" s{char}{char} to move to {char}{char}
-nmap <leader>s <Plug>(easymotion-overwin-f2)
-vmap <leader>s <Plug>(easymotion-bd-f2)
+map <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+" <Leader>s{char}{char} to move to {char}{char}
+nmap <Leader>s <Plug>(easymotion-overwin-f2)
+vmap <Leader>s <Plug>(easymotion-bd-f2)
 " Move to line
 map <Leader>l <Plug>(easymotion-bd-jk)
 nmap <Leader>l <Plug>(easymotion-overwin-line)
