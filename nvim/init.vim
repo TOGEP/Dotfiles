@@ -45,6 +45,16 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 " tabline
 set showtabline=2
 
+" undo
+set undolevels=1000
+if has('persistent_undo')
+  let undo_path = expand('~/.vim/undo')
+  if !isdirectory(undo_path)
+    call mkdir(undo_path, 'p')
+  endif
+  set undofile
+endif
+
 " vim-plug
 call plug#begin()
 
