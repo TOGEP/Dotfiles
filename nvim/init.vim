@@ -11,7 +11,6 @@ set termguicolors
 set background=dark
 syntax on
 
-
 " Tab/Indent
 set expandtab
 set tabstop=2
@@ -54,6 +53,10 @@ if has('persistent_undo')
   endif
   set undofile
 endif
+
+" open&source vimrc
+nnoremap <Leader>. :new ~/Dotfiles/nvim/init.vim<CR>
+nnoremap <Leader>, :source ~/Dotfiles/nvim/init.vim<CR>
 
 " vim-plug
 call plug#begin()
