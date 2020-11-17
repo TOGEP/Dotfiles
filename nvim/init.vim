@@ -134,6 +134,8 @@ nnoremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
 " nmap <Leader>hr <Plug>GitGutterRevertHunk
 " nmap <Leader>hp <Plug>GitGutterPreviewHunk
 
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+
 call plug#end()
 
 colorscheme lucius
