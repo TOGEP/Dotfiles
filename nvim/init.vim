@@ -40,6 +40,8 @@ set noundofile
 " keymap
 let mapleader = "\<Space>"
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
+noremap H ^
+noremap L g_
 
 " tabline
 set showtabline=2
