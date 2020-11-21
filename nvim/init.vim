@@ -138,6 +138,8 @@ nnoremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
+Plug 'jiangmiao/auto-pairs'
+
 call plug#end()
 
 colorscheme lucius
