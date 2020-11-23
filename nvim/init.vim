@@ -78,7 +78,7 @@ Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
 map <C-e> :NERDTreeTabsToggle<CR>
 " ファイル指定せずにvimを開いた時にNERDTreeを最初から表示
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " NERDTreeToggleのウィンドウだけが残る場合はvimを終了
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " 隠しファイル表示
