@@ -104,7 +104,7 @@ command! -bang -nargs=* Rg
   \ fzf#vim#with_preview(),
   \ <bang>0)
 nnoremap <silent> <Leader>g :Rg<CR>
-nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>p :GFiles<CR>
 
 Plug 'easymotion/vim-easymotion'
 " Disable default mappings
