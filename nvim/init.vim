@@ -139,6 +139,7 @@ nnoremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
 " nmap <Leader>hp <Plug>GitGutterPreviewHunk
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'mattn/vim-maketable'
 
 Plug 'jiangmiao/auto-pairs'
 
