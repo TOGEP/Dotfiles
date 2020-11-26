@@ -20,6 +20,11 @@ export SAVEHIST=10000
 setopt hist_ignore_dups
 setopt EXTENDED_HISTORY
 
+# beep
+setopt no_beep
+setopt nolistbeep
+setopt nohistbeep
+
 # auto cd
 setopt auto_cd
 function chpwd() { exa --icons }
