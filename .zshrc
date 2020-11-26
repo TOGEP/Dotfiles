@@ -29,6 +29,10 @@ setopt nohistbeep
 setopt auto_cd
 function chpwd() { exa --icons }
 
+# history search
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+
 # alias
 alias ls='exa --icons'
 alias cat='bat'
