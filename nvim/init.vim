@@ -143,6 +143,9 @@ Plug 'mattn/vim-maketable'
 
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'mbbill/undotree'
+nnoremap <F5> :UndotreeToggle<CR>
+
 call plug#end()
 
 colorscheme lucius
