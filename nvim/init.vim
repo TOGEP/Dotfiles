@@ -146,6 +146,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'mbbill/undotree'
 nnoremap <F5> :UndotreeToggle<CR>
 
+Plug 'lervag/vimtex'
+
 call plug#end()
 
 colorscheme lucius
