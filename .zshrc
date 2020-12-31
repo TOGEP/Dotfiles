@@ -76,6 +76,19 @@ zinit light zsh-users/zsh-history-substring-search
 
 zinit light chrissicool/zsh-256color
 
+# bind fg to ctrl+z
+fg-ctrl-z(){
+  if [[ $#BUFFER -eq 0 ]]; then
+    BUFFER="fg"
+    zle accept-line
+  else
+    zle push-input
+    zle clear-screen
+  fi
+}
+zle -N fg-ctrl-z
+bindkey '^Z' fg-ctrl-z
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
