@@ -72,7 +72,9 @@ nmap <silent> <CR> <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
 nmap <silent> f <Plug>(coc-fix-current)
 
+" colorscheme
 Plug 'jonathanfilip/vim-lucius'
+Plug 'ghifarit53/tokyonight-vim'
 
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -150,4 +152,7 @@ Plug 'lervag/vimtex'
 
 call plug#end()
 
-colorscheme lucius
+" colorscheme lucius
+colorscheme tokyonight
+let g:tokyonight_style = 'night' " available: night, storm
+let g:tokyonight_enable_italic = 1
