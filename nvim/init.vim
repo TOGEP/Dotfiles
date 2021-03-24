@@ -171,6 +171,10 @@ nnoremap <F5> :UndotreeToggle<CR>
 
 Plug 'lervag/vimtex'
 
+Plug 'simeji/winresizer'
+let g:winresizer_vert_resize = 1
+let g:winresizer_horiz_resize = 1
+
 call plug#end()
 
 " colorscheme lucius
