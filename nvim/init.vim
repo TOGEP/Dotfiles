@@ -42,6 +42,11 @@ let mapleader = "\<Space>"
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR>
 noremap H ^
 noremap L g_
+" US keyboad
+nnoremap ; :
+nnoremap : ;
+vnoremap : :
+vnoremap : ;
 
 " tabline
 set showtabline=2
