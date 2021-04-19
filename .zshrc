@@ -13,6 +13,9 @@ export PATH=$PATH:/opt/go/bin
 export GOPATH=$HOME/Development/go
 export PATH=$PATH:$GOPATH/bin
 
+# clangd
+export PATH=$PATH:/Library/Developer/CommandLineTools/usr/bin
+
 # history
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
