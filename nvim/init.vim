@@ -166,7 +166,10 @@ nnoremap <Leader>hh :GitGutterLineHighlightsToggle<CR>
 " nmap <Leader>hr <Plug>GitGutterRevertHunk
 " nmap <Leader>hp <Plug>GitGutterPreviewHunk
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+" not pre build build bundle for ARM platform.(2021/4/26)
+" Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
 Plug 'mattn/vim-maketable'
 
 Plug 'jiangmiao/auto-pairs'
