@@ -1,2 +1,25 @@
 #!bin/bash
 # 開発環境の初期化処理
+
+# load public functions
+. ../install
+
+# OS Check
+declare OS=""
+if [ "$(uname)" == 'Darwin' ]; then
+  OS='Mac'
+  if [ "$(uname -m)" == 'arm64' ]; then
+    OS='M1Mac'
+  fi
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  RELEASE_FILE=/etc/os-release
+  if grep '^NAME="Ubuntu' "${RELEASE_FILE}" >/dev/null; then
+  OS='Ubuntu'
+  fi
+else
+  OS=$(uname -a)
+  printf "sorry, $OS is not supported."
+fi
+
+read -p "$(warn "Are you sure you want to start the $OS setup? [y/n] ")"
+
