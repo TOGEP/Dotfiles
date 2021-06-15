@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# output functions
+## colors and formatting
+## https://misc.flogisoft.com/bash/tip_colors_and_formatting
+info(){
+  printf '\033[39m%s\033[m\n' $1
+}
+
+success(){
+  printf '\033[32m%s\033[m\n' $1
+}
+
+error(){
+  printf '\033[91m%s\033[m\n' $1
+}
+
+warn(){
+  printf '\033[33m%s\033[m\n' $1
+}
