@@ -76,6 +76,17 @@ nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <CR> <Plug>(coc-definition)
 nmap <silent> <Leader>r <Plug>(coc-references)
 nmap <silent> f <Plug>(coc-fix-current)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  elseif (coc#rpc#ready())
+    call CocActionAsync('doHover')
+  else
+    execute '!' . &keywordprg . " " . expand('<cword>')
+  endif
+endfunction
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
