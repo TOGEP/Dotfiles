@@ -21,5 +21,34 @@ else
   printf "sorry, $OS is not supported."
 fi
 
-read -p "$(warn "Are you sure you want to start the $OS setup? [y/n] ")"
+read -p "$(warn "Are you sure you want to start the $OS setup? [y/n] ")" -n 1 -r str
+if [[ $str = [yY] ]]; then
+  echo ""
+  info "Start init"
 
+else 
+  echo ""
+  info "bye"
+  exit 1
+fi
+
+Mac(){
+  echo ""
+  info "Mac"
+}
+
+M1Mac(){
+  echo ""
+  info "M1mac"
+}
+
+Ubuntu(){
+  echo ""
+  info "Ubuntu"
+}
+
+case $OS in
+  Mac) Mac ;;
+  M1Mac) M1Mac ;;
+  Ubuntu) Ubuntu ;;
+esac
