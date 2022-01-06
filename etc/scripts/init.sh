@@ -1,8 +1,8 @@
-#!bin/bash
+#!/bin/sh
 # 開発環境の初期化処理
 
 # load public functions
-. ../install
+. ../colors.sh
 
 # OS Check
 declare OS=""

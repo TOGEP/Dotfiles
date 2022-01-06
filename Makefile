@@ -1,5 +1,5 @@
 init:
-	./etc/scripts/init
+	./etc/scripts/init.sh
 
 deploy:
-	./etc/scripts/deploy
+	./etc/scripts/deploy.sh

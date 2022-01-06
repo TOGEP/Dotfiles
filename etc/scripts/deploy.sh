@@ -1,2 +1,2 @@
-#!bin/bash
+#!/bin/sh
 # dotfilesのリンクを貼る
