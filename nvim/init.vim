@@ -73,9 +73,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-nmap <silent> <CR> <Plug>(coc-definition)
-nmap <silent> <Leader>r <Plug>(coc-references)
-nmap <silent> f <Plug>(coc-fix-current)
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
@@ -193,6 +190,25 @@ Plug 'lervag/vimtex'
 Plug 'simeji/winresizer'
 let g:winresizer_vert_resize = 1
 let g:winresizer_horiz_resize = 1
+
+Plug 'thinca/vim-quickrun', {'on': 'QuickRun'}
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+nnoremap <Leader>r :QuickRun<CR>
+let g:quickrun_config = {
+  \'_' : {
+    \ 'outputter/error/success': 'buffer',
+    \ 'outputter/error/error': 'quickfix',
+    \ 'outputter/quickfix/open_cmd': 'copen',
+    \ 'runner' : "vimproc",
+    \ 'runner/vimproc/updatetime' : 60,
+    \ 'hook/time/enable': 1
+  \ },
+\}
+
+Plug 'folke/which-key.nvim'
+
+" 安定板が出たら使うかも
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
