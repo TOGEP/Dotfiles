@@ -204,6 +204,8 @@ let g:quickrun_config = {
     \ 'hook/time/enable': 1
   \ },
 \}
+" 大文字Rでクリップボードから標準入力
+nnoremap <Leader>R :QuickRun -input =@+<CR>
 
 Plug 'folke/which-key.nvim'
 
