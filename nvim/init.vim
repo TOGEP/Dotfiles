@@ -130,7 +130,7 @@ Plug 'vim-jp/vimdoc-ja'
 
 Plug 'mattn/vim-goimports'
 
-Plug 'airblade/vim-rooter'
+" Plug 'airblade/vim-rooter'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -139,10 +139,10 @@ command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \ 'rg --column --line-number --no-heading --hidden --smart-case --glob "!\.git/*" -- '.shellescape(<q-args>),
   \ 1,
-  \ fzf#vim#with_preview(),
+  \ fzf#vim#with_preview({'dir': system('git rev-parse --show-toplevel 2> /dev/null')[:-2]}),
   \ <bang>0)
 nnoremap <silent> <Leader>g :Rg<CR>
-nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>p :GFiles<CR>
 
 Plug 'easymotion/vim-easymotion'
 " Disable default mappings
