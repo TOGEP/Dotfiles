@@ -193,7 +193,6 @@ let g:winresizer_horiz_resize = 1
 
 Plug 'thinca/vim-quickrun', {'on': 'QuickRun'}
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
-nnoremap <Leader>r :QuickRun<CR>
 let g:quickrun_config = {
   \'_' : {
     \ 'outputter/error/success': 'buffer',
@@ -204,7 +203,16 @@ let g:quickrun_config = {
     \ 'hook/time/enable': 1
   \ },
 \}
-" 大文字Rでクリップボードから標準入力
+" 小文字rでinputファイルがあるかどうかで分岐
+nnoremap <Leader>r :call <SID>DoQuickRun()<CR>
+function! s:DoQuickRun() abort
+  if filereadable('input')
+    execute ':QuickRun <input'
+  else
+    execute ':QuickRun'
+  endif
+endfunction
+"大文字Rでクリップボードから標準入力
 nnoremap <Leader>R :QuickRun -input =@+<CR>
 
 Plug 'folke/which-key.nvim'
