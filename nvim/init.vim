@@ -221,6 +221,11 @@ vnoremap <silent> <Leader> :<c-u>WhichKeyVisual '<Space>'<CR>
 " By default timeoutlen is 1000 ms
 set timeoutlen=500
 
+Plug 'sebdah/vim-delve'
+autocmd fileType go nnoremap <silent> gb :<c-u>DlvDebug<CR>
+autocmd fileType go command! BP :DlvToggleBreakpoint
+autocmd fileType go command! BPC :DlvClearAll
+
 " 安定板が出たら使うかも
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
