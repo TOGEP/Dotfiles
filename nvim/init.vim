@@ -215,7 +215,11 @@ endfunction
 "大文字Rでクリップボードから標準入力
 nnoremap <Leader>R :QuickRun -input =@+<CR>
 
-Plug 'folke/which-key.nvim'
+Plug 'liuchengxu/vim-which-key'
+nnoremap <silent> <Leader> :<c-u>WhichKey '<Space>'<CR>
+vnoremap <silent> <Leader> :<c-u>WhichKeyVisual '<Space>'<CR>
+" By default timeoutlen is 1000 ms
+set timeoutlen=500
 
 " 安定板が出たら使うかも
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
