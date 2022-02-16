@@ -21,6 +21,13 @@ set shiftwidth=2
 
 " clipboard
 set clipboard=unnamed
+" wsl yank setting
+if has("wsl")
+   augroup Yank
+        autocmd!
+        autocmd TextYankPost * :call system('clip.exe ',@")
+    augroup END
+endif
 
 " search
 set incsearch
