@@ -116,6 +116,7 @@ endif
 " colorscheme
 Plug 'jonathanfilip/vim-lucius'
 Plug 'ghifarit53/tokyonight-vim'
+Plug 'EdenEast/nightfox.nvim'
 
 Plug 'preservim/nerdtree'
 Plug 'jistr/vim-nerdtree-tabs'
@@ -238,8 +239,4 @@ autocmd fileType go command! BPC :DlvClearAll
 
 call plug#end()
 
-" colorscheme lucius
-colorscheme tokyonight
-let g:tokyonight_style = 'night' " available: night, storm
-let g:tokyonight_enable_italic = 1
-let g:lightline = {'colorscheme' : 'tokyonight'}
+colorscheme nightfox
