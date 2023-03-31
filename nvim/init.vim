@@ -211,8 +211,12 @@ let g:quickrun_config = {
     \ 'hook/time/enable': 1
   \ },
 \}
-" 小文字rでinputファイルがあるかどうかで分岐
+
+" 小文字rと大文字RでQuickRunの挙動を分岐
+" 小文字rの場合:カレントディレクトリにinputファイルがあれば中身を標準入力として引き渡して実行，それ以外は標準入力無しで実行
+" 大文字Rの場合:クリップボードの中身を標準入力として引き渡して実行
 nnoremap <Leader>r :call <SID>DoQuickRun()<CR>
+nnoremap <Leader>R :QuickRun -input =@+<CR>
 function! s:DoQuickRun() abort
   if filereadable('input')
     execute ':QuickRun <input'
@@ -220,8 +224,6 @@ function! s:DoQuickRun() abort
     execute ':QuickRun'
   endif
 endfunction
-"大文字Rでクリップボードから標準入力
-nnoremap <Leader>R :QuickRun -input =@+<CR>
 
 Plug 'liuchengxu/vim-which-key'
 nnoremap <silent> <Leader> :<c-u>WhichKey '<Space>'<CR>
@@ -233,6 +235,8 @@ Plug 'sebdah/vim-delve'
 autocmd fileType go nnoremap <silent> gb :<c-u>DlvDebug<CR>
 autocmd fileType go command! BP :DlvToggleBreakpoint
 autocmd fileType go command! BPC :DlvClearAll
+
+Plug 'github/copilot.vim'
 
 " 安定板が出たら使うかも
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
