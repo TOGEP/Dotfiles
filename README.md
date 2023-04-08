@@ -1,6 +1,6 @@
 # dotfiles
 
-![test](https://github.com/TOGEP/dotfiles/workflows/macOS.yml/badge.svg)
+![test](https://github.com/TOGEP/dotfiles/actions/workflows/macOS.yml/badge.svg)
 
 ## alfredのインストール
 https://www.alfredapp.com

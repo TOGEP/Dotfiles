@@ -13,5 +13,12 @@ for dotfile in "${DOTFILES_DIR}"/.??* ; do
   ln -fnsv $dotfile $HOME
 done
 
+if [ ! -e "$HOME/.config/nvim/init.vim" ]; then
+  mkdir -p "$HOME/.config/nvim/" && touch "$HOME/.config/nvim/init.vim"
+fi
 ln -fnsv "$DOTFILES_DIR/nvim/init.vim" "$HOME/.config/nvim/init.vim"
+
+if [ ! -e "$HOME/.config/karabiner/karabiner.json" ]; then
+  mkdir -p "$HOME/.config/karabiner/" && touch "$HOME/.config/karabiner/karabiner.json"
+fi
 ln -fnsv "$DOTFILES_DIR/karabiner/karabiner.json" "$HOME/.config/karabiner/karabiner.json"
