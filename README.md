@@ -1,4 +1,6 @@
-# README
+# dotfiles
+
+![test](https://github.com/TOGEP/dotfiles/workflows/macOS/badge.svg)
 
 ## alfredのインストール
 https://www.alfredapp.com
