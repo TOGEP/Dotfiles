@@ -11,4 +11,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Run macOS test
-        run: make
+        run: make all

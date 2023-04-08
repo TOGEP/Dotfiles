@@ -9,6 +9,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   if test ! $(which brew); then
     echo 'Install Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
+  else
+    echo "Already installed Homebrew"
   fi
 
   # Check for xcode command line tool
