@@ -17,3 +17,17 @@ $ nodenv install *version*
 $ nodenv rehash
 $ nodenv global *version*
 ```
+
+## iterm2の設定反映
+```text
+1. Press "command + ," to open the preferences window.
+2. Select the "General" tab.
+3. Select the "Preferences" tab.
+4. Turn on "Load preference from a custom folder or URL".
+5. Enter "~/dotfiles/iterm2/com.googlecode.iterm2.plist".
+6. Restart iterm2 !
+```
+
+## 初回起動が必要なもの
+- Alfred
+- Karabiner-Elements
