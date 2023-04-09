@@ -1,14 +1,14 @@
-name: macOS
+name: ubuntuOS
 
 on: [push]
 
 jobs:
   build:
 
-    runs-on: macOS-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Run macOS test
+      - name: Run ubuntuOS test
         run: make all

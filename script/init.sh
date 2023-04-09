@@ -9,6 +9,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   if test ! $(which brew); then
     echo 'Install Homebrew'
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
+    echo 'eval' $(/opt/homebrew/bin/brew shellenv) >> $HOME/.zprofile
+    eval $(/opt/homebrew/bin/brew shellenv)
   else
     echo "Already installed Homebrew"
   fi
@@ -31,9 +33,7 @@ if [ "$(uname)" == 'Darwin' ]; then
       echo "Already installed rosetta2"
     fi
   fi
-
   brew bundle
-  # TODO vim & zsh setting
 
 # Linux
 elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
@@ -41,8 +41,25 @@ elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
   # Ubuntu
   if grep '^NAME="Ubuntu' "${RELEASE_FILE}" >/dev/null; then
     echo 'Start setup UbuntuOS'
-    # TODO support UbuntuOS
+    sudo apt install language-pack-ja
+    sudo update-locale LANG=ja_JP.UTF-8
+    sudo apt-get install build-essential procps curl file git
+    if test ! $(which brew); then
+      echo 'Install Homebrew'
+      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"  
+      echo 'eval' $(/home/linuxbrew/.linuxbrew/bin/brew shellenv) >> $HOME/.bash_profile
+      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    else
+      echo "Already installed Homebrew"
+    fi
   fi
+  brew bundle
+  brew install zsh
+  echo 'Change shell to zsh'
+  sudo chsh $USER -s $(which zsh)
+  echo 'eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)' >> $HOME/.zprofile
+  eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  source $HOME/.zprofile
 
 # 
 else
