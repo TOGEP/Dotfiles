@@ -12,6 +12,7 @@ $ cd dotfiles && make all
 ## copilot.vimを使う場合  
 vimのプラグイン`copilot.vim`を使う場合はnodejsが必要となる
 ```bash
+$ anyenv init
 $ anyenv install nodenv
 $ nodenv install *version*
 $ nodenv rehash
@@ -26,6 +27,15 @@ $ nodenv global *version*
 4. Turn on "Load preference from a custom folder or URL".
 5. Enter "~/dotfiles/iterm2/com.googlecode.iterm2.plist".
 6. Restart iterm2 !
+```
+
+## gitの初期設定
+```bash
+git config --global user.name XXXXX
+git config --global user.email XXXXX@XXXXX
+git config --global core.editor nvim
+git config --global init.defaultBranch main
+git config --list
 ```
 
 ## 初回起動が必要なもの

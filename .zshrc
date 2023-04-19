@@ -42,6 +42,8 @@ alias cat='bat'
 alias find='fd'
 alias vi='vim'
 alias vim='nvim'
+alias tf='terraform'
+alias tfmt='terraform fmt -recursive'
 
 fpath=(
   ${HOME}/.zsh/completions

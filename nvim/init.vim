@@ -88,15 +88,18 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'petertriho/cmp-git'
 Plug 'hrsh7th/nvim-cmp'
-" For luasnip users.
-Plug 'L3MON4D3/LuaSnip'
-Plug 'saadparwaiz1/cmp_luasnip'
+" For vsnip users.
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip'
+" TODO change from vsnip to luasnip.
+" Plug 'L3MON4D3/LuaSnip'
+" Plug 'saadparwaiz1/cmp_luasnip'
 " For 'copilot.vim' users.
 Plug 'hrsh7th/cmp-copilot'
 
-" lsp settings
-" lspの設定に関しては遅延読み込みしても良い
 lua << EOF
+-- lsp settings
+-- lspの設定に関しては遅延読み込みしても良い
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -127,7 +130,6 @@ vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
 vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
-
 EOF
 
 " colorscheme
@@ -276,16 +278,31 @@ require("mason-lspconfig").setup_handlers {
 }
 EOF
 
+" Setup language servers.
+lua << EOF
+local lspconfig = require('lspconfig')
+lspconfig.gopls.setup {}
+lspconfig.terraformls.setup {}
+lspconfig.rust_analyzer.setup {
+  -- Server-specific settings. See `:help lspconfig-setup`
+  settings = {
+    ['rust-analyzer'] = {},
+  },
+}
+EOF
+
+
 
 " Set up nvim-cmp.
-lua <<EOF
+lua << EOF
   local cmp = require'cmp'
 
   cmp.setup({
     snippet = {
       -- REQUIRED - you must specify a snippet engine
       expand = function(args)
-        require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
       end,
     },
     window = {
@@ -301,7 +318,8 @@ lua <<EOF
     }),
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'luasnip' }, -- For luasnip users.
+      { name = 'vsnip' }, -- For vsnip users.
+      -- { name = 'luasnip' }, -- For luasnip users.
     }, {
       { name = 'buffer' },
     })
