@@ -49,6 +49,19 @@ fpath=(
   ${HOME}/.zsh/completions
   ${fpath}
 )
+
+# fool proof
+# terraform destroy -help も使えなくなるのが玉に瑕
+function terraform() {
+  if [ "$1" = "destroy" ]; then
+    if [[ ! "$*" =~ "-target=" ]]; then
+      echo "Error: Terraform destroy requires a target. Use '-target=RESOURCE_TYPE.RESOURCE_NAME'"
+      return 1
+    fi
+  fi
+  command terraform "$@"
+}
+
 autoload -Uz compinit
 compinit
 
