@@ -90,7 +90,7 @@ zinit light-mode for \
 # theme
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
-# Complement
+# Completion
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
@@ -114,8 +114,13 @@ fg-ctrl-z(){
 zle -N fg-ctrl-z
 bindkey '^Z' fg-ctrl-z
 
-# k8s complement
+# k8s completion
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
+# aws completion
+autoload bashcompinit && bashcompinit
+autoload -Uz compinit && compinit
+complete -C '/usr/local/bin/aws_completer' aws
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
