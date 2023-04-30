@@ -114,6 +114,9 @@ fg-ctrl-z(){
 zle -N fg-ctrl-z
 bindkey '^Z' fg-ctrl-z
 
+# k8s complement
+[[ $commands[kubectl] ]] && source <(kubectl completion zsh)
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
