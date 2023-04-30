@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -93,6 +95,7 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 # Completion
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
+zinit light marlonrichert/zsh-autocomplete
 
 # Syntax Highlight
 zinit light zdharma-continuum/fast-syntax-highlighting
@@ -114,6 +117,13 @@ fg-ctrl-z(){
 zle -N fg-ctrl-z
 bindkey '^Z' fg-ctrl-z
 
+# zsh completion
+# bindkey '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete
+zstyle ':autocomplete:history-search-backward:*' list-lines 16
+zstyle ':autocomplete:history-incremental-search-backward:*' list-lines 16
+
 # k8s completion
 [[ $commands[kubectl] ]] && source <(kubectl completion zsh)
 
@@ -127,3 +137,6 @@ complete -C '/usr/local/bin/aws_completer' aws
 
 # Iterm2 Shell integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
