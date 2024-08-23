@@ -7,7 +7,7 @@ set cursorline
 set showmatch
 set whichwrap=b,s,h,l,<,>,[,],~
 set mouse=a
-set termguicolors 
+set termguicolors
 set background=dark
 syntax on
 
@@ -335,7 +335,6 @@ lua << EOF
       { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
       { name = 'buffer' },
- 
     })
   })
 
