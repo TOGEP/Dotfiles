@@ -7,7 +7,7 @@ set cursorline
 set showmatch
 set whichwrap=b,s,h,l,<,>,[,],~
 set mouse=a
-set termguicolors
+set termguicolors 
 set background=dark
 syntax on
 
@@ -259,6 +259,8 @@ autocmd fileType go command! BPC :DlvClearAll
 
 Plug 'github/copilot.vim'
 
+Plug 'google/vim-jsonnet'
+
 " 安定板が出たら使うかも
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
@@ -333,6 +335,7 @@ lua << EOF
       { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
     }, {
       { name = 'buffer' },
+ 
     })
   })
 

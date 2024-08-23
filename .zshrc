@@ -18,6 +18,11 @@ export PATH=$PATH:$GOPATH/bin
 # clangd
 export PATH=$PATH:/Library/Developer/CommandLineTools/usr/bin
 
+# python
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # history
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000
@@ -46,6 +51,7 @@ alias vi='vim'
 alias vim='nvim'
 alias tf='terraform'
 alias tfmt='terraform fmt -recursive'
+alias python="/opt/homebrew/bin/python3"
 
 fpath=(
   ${HOME}/.zsh/completions
