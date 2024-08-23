@@ -259,6 +259,8 @@ autocmd fileType go command! BPC :DlvClearAll
 
 Plug 'github/copilot.vim'
 
+Plug 'google/vim-jsonnet'
+
 " 安定板が出たら使うかも
 " Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
