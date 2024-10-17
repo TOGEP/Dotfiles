@@ -37,14 +37,14 @@ setopt nohistbeep
 
 # auto cd
 setopt auto_cd
-function chpwd() { exa --icons }
+function chpwd() { eza --icons }
 
 # history search
 bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
 
 # alias
-alias ls='exa --icons'
+alias ls='eza --icons'
 alias cat='bat'
 alias find='fd'
 alias vi='vim'
